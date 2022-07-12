@@ -1,26 +1,16 @@
 import { NextPage } from "next";
-import Image from "next/image";
 import React from "react";
-import IamseriousImage from "../public/Iamserious.png";
 import tw, { styled } from "twin.macro";
+import { Typography } from "@mui/material";
 
 const Footer = styled.footer(() => [tw`text-center h-10 p-3`]);
 
 const MainFooter: NextPage = () => {
   return (
     <Footer>
-      <a tw="text-4xl">
-        Powered by{" "}
-        <span>
-          <Image
-            src={IamseriousImage}
-            alt="Your company Logo"
-            width={32}
-            height={32}
-          />
-        </span>{" "}
-        Peter Bang
-      </a>
+      <Typography fontFamily={"Maven pro"}>
+        Copyright © PETER CIRCUIT SOFT co.,ltd All rights reserved.
+      </Typography>
     </Footer>
   );
 };

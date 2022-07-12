@@ -13,9 +13,8 @@ import {
   Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import DesktopMac from "@mui/icons-material/DesktopMac";
 
-const pages = ["Page A", "Page B", "Page C"];
+const pages = ["기업 공지", "문의하기"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const MainAppBar: React.FC<any> = () => {
@@ -40,10 +39,9 @@ const MainAppBar: React.FC<any> = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <DesktopMac sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -52,14 +50,14 @@ const MainAppBar: React.FC<any> = () => {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "Roboto, Helvetica",
-              fontWeight: 700,
+              fontFamily: "Maven Pro",
+              fontWeight: 500,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
           >
-            Company Name
+            peter circuit soft
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -93,12 +91,13 @@ const MainAppBar: React.FC<any> = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" color="inherit">
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <DesktopMac sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -108,21 +107,21 @@ const MainAppBar: React.FC<any> = () => {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "Roboto, Helvetica",
-              fontWeight: 700,
+              fontFamily: "Maven pro",
+              fontWeight: 500,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
           >
-            Company Name
+            peter circuit soft
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "inherit", display: "block" }}
               >
                 {page}
               </Button>
