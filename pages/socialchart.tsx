@@ -9,9 +9,7 @@ type NextPageWithLayout<T> = NextPage<T> & {
   getLayout?: (page: ReactElement) => ReactElement;
 };
 
-const MainContainer = styled(Container)(() => [
-  tw`relative text-center min-h-full`,
-]);
+const MainContainer = styled(Container)(() => [tw`text-center`]);
 
 const notice: NextPageWithLayout<any> = () => {
   return (
@@ -25,7 +23,7 @@ const notice: NextPageWithLayout<any> = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Notice page입니다.</h1>
+        <h1>Social chart</h1>
       </main>
     </MainContainer>
   );

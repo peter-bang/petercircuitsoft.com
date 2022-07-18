@@ -13,8 +13,13 @@ import {
   Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 
-const pages = ["기업 공지", "문의하기"];
+const pages = [
+  { navName: "소셜차트", navLink: "/socialchart" },
+  { navName: "기업 공지", navLink: "/notice" },
+  { navName: "문의하기", navLink: "/contactus" },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const MainAppBar: React.FC<any> = () => {
@@ -30,7 +35,8 @@ const MainAppBar: React.FC<any> = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    console.log(event.target);
     setAnchorElNav(null);
   };
 
@@ -90,16 +96,16 @@ const MainAppBar: React.FC<any> = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.navName} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" color="inherit">
-                    {page}
+                    {page.navName}
                   </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href=""
@@ -118,13 +124,14 @@ const MainAppBar: React.FC<any> = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "inherit", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link key={page.navName} href={page.navLink}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "inherit", display: "block" }}
+                >
+                  {page.navName}
+                </Button>
+              </Link>
             ))}
           </Box>
 

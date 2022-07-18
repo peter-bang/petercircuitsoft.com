@@ -27,7 +27,7 @@ const Home: NextPageWithLayout<any> = () => {
         <div
           style={{
             width: "100%",
-            padding: "30%",
+            padding: "22%",
             position: "relative",
           }}
         >
@@ -51,6 +51,7 @@ const Home: NextPageWithLayout<any> = () => {
             >
               peter circuit soft
             </Typography>
+            <br></br>
             <Typography
               fontSize={{ xs: 15, md: 45 }}
               noWrap
@@ -68,8 +69,8 @@ const Home: NextPageWithLayout<any> = () => {
               }}
             >
               피터 서킷 소프트는
-              <br /> 심장이 쫄깃한 모험을 좋아하는 피터가 만든
-              <br /> 따끈따끈한 스타트업이에요.
+              <br /> 기술을 통한 평등한 정보 제공을
+              <br /> 최고의 가치로 여깁니다.
             </Typography>
           </div>
         </div>

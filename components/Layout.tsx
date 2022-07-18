@@ -4,11 +4,15 @@ import MainFooter from "./MainFooter";
 
 const Layout: React.FC<any> = ({ children }) => {
   return (
-    <>
+    <div
+      style={{
+        height: "100%",
+      }}
+    >
       <MainAppBar />
       {children}
       <MainFooter />
-    </>
+    </div>
   );
 };
 
