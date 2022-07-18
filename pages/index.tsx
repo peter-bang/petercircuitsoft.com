@@ -27,13 +27,13 @@ const Home: NextPageWithLayout<any> = () => {
         <div
           style={{
             width: "100%",
-            padding: "22%",
+            padding: "20%",
             position: "relative",
           }}
         >
-          <Image src="/jeju.png" layout="fill" objectFit="cover" />
+          <Image src="/documents.jpg" layout="fill" objectFit="cover" />
           <div style={{ position: "absolute", top: "10%", left: "10%" }}>
-            <Typography
+            {/* <Typography
               fontSize={{ xs: 30, md: 60 }}
               noWrap
               component="a"
@@ -51,7 +51,7 @@ const Home: NextPageWithLayout<any> = () => {
             >
               peter circuit soft
             </Typography>
-            <br></br>
+            <br></br> */}
             <Typography
               fontSize={{ xs: 15, md: 45 }}
               noWrap
@@ -64,7 +64,7 @@ const Home: NextPageWithLayout<any> = () => {
                 textAlign: "left",
                 fontWeight: 500,
                 letterSpacing: ".3rem",
-                color: "white",
+                color: "rgba(0,0,0,1)",
                 textDecoration: "none",
               }}
             >

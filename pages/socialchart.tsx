@@ -24,6 +24,7 @@ const notice: NextPageWithLayout<any> = () => {
       </Head>
       <main>
         <h1>Social chart</h1>
+        <h2>페이지 제작중입니다.</h2>
       </main>
     </MainContainer>
   );

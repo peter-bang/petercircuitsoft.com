@@ -12,12 +12,18 @@ type NextPageWithLayout<T> = NextPage<T> & {
 const MainContainer = styled(Container)(() => [tw`text-center`]);
 
 const contactUs: NextPageWithLayout<any> = () => {
-  // const mapDivRef = useRef<HTMLDivElement>(null);
-  // useEffect(() => {
-  //   if (mapDivRef.current) {
-  //     const container = mapDivRef.current;
-  //   }
-  // }, [mapDivRef]);
+  const mapDivRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (mapDivRef.current) {
+      const { kakao } = window;
+      const container = mapDivRef.current;
+      const options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3,
+      };
+      const newMap = new kakao.maps.Map(mapDivRef.current, options);
+    }
+  }, [mapDivRef]);
   return (
     <MainContainer>
       <Head>
@@ -35,6 +41,7 @@ const contactUs: NextPageWithLayout<any> = () => {
       <main>
         <div>
           <h1>Contact us</h1>
+          <h2>페이지 제작중입니다.</h2>
           <span>
             문의하기:{" "}
             <a href="mailto:peter.bang@petercircuitsoft.com">
@@ -54,7 +61,10 @@ const contactUs: NextPageWithLayout<any> = () => {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        {/* <div ref={mapDivRef} style={{ width: "500px", height: "400px" }}></div> */}
+        {/* <div
+          ref={mapDivRef}
+          style={{ margin: "auto", width: "500px", height: "400px" }}
+        ></div> */}
       </main>
     </MainContainer>
   );
