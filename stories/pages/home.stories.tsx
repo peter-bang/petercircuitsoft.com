@@ -1,5 +1,5 @@
 import { ComponentStory } from "@storybook/react";
-import Home, { getServerSideProps } from "../../pages/index";
+import Home from "../../pages/index";
 
 export default {
   title: "Pages/Home",
@@ -15,9 +15,9 @@ export const HomePage: ComponentStory<typeof Home> = (
 };
 
 HomePage.args = { name: "John Doe" }; //default args
-HomePage.loaders = [
-  async () => {
-    let data = await getServerSideProps();
-    return data.props;
-  },
-];
+// HomePage.loaders = [
+//   async () => {
+//     let data = await getServerSideProps();
+//     return data.props;
+//   },
+// ];
