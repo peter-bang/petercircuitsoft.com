@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Container } from "@mui/material";
 import tw, { styled } from "twin.macro";
-import React, { ReactElement, useEffect, useRef } from "react";
+import React, { ReactElement } from "react";
 import Layout from "../components/Layout";
 
 type NextPageWithLayout<T> = NextPage<T> & {
@@ -12,26 +12,10 @@ type NextPageWithLayout<T> = NextPage<T> & {
 const MainContainer = styled(Container)(() => [tw`text-center`]);
 
 const contactUs: NextPageWithLayout<any> = () => {
-  const mapDivRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (mapDivRef.current) {
-      const { kakao } = window;
-      const container = mapDivRef.current;
-      const options = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3,
-      };
-      const newMap = new kakao.maps.Map(mapDivRef.current, options);
-    }
-  }, [mapDivRef]);
   return (
     <MainContainer>
       <Head>
         <title>Contact Us</title>
-        <script
-          type="text/javascript"
-          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_API_KEY}`}
-        ></script>
         <meta
           name="description"
           content="Contact us page for petercircuitsoft.com"
@@ -61,10 +45,6 @@ const contactUs: NextPageWithLayout<any> = () => {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        {/* <div
-          ref={mapDivRef}
-          style={{ margin: "auto", width: "500px", height: "400px" }}
-        ></div> */}
       </main>
     </MainContainer>
   );
