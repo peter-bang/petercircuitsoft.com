@@ -69,7 +69,7 @@ const Home: NextPageWithLayout<any> = () => {
               }}
             >
               피터 서킷 소프트는
-              <br /> 기술을 통한 평등한 정보 제공을
+              <br /> 기술을 통한 공정한 정보 제공을
               <br /> 최고의 가치로 여깁니다.
             </Typography>
           </div>
